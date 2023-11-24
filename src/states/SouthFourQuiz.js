@@ -36,10 +36,16 @@ class SouthFourQuiz extends React.Component {
       showDifferences: true,
       loadErrorMessage: "",
       collapsed: true,
+      isSanma: false,
     };
 
     this.onSubmit = this.onSubmit.bind(this);
     this.onFuChanged = this.onFuChanged.bind(this);
+  }
+
+  isSanma() {
+    console.log(this.state.isSanma);
+    this.setState({ isSanma: !this.state.isSanma });
   }
 
   toggle() {
@@ -289,7 +295,18 @@ class SouthFourQuiz extends React.Component {
           <Card>
             <CardBody>
               <Row>
-                <div>aaaa</div>
+                <Col className="form-check form-check-inline">
+                  <Input
+                    className="form-check-input"
+                    type="checkbox"
+                    id="isSanma"
+                    checked={this.state.isSanma}
+                    onChange={() => this.isSanma()}
+                  />
+                  <Label className="form-check-label" for="isSanma">
+                    {t("settings.isSanma")}
+                  </Label>
+                </Col>
               </Row>
             </CardBody>
           </Card>
