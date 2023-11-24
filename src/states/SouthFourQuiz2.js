@@ -11,9 +11,6 @@ import {
   Button,
   ListGroupItemHeading,
   Label,
-  Collapse,
-  Card,
-  CardBody,
 } from "reactstrap";
 import { getPoints } from "../scripts/ScoreCalculation";
 import Player from "../models/Player";
@@ -24,10 +21,9 @@ import SouthFourResultMessage from "../models/SouthFourResultMessage";
 import { withTranslation } from "react-i18next";
 import LocalizedMessage from "../models/LocalizedMessage";
 
-class SouthFourQuiz extends React.Component {
+class SouthFourQuiz2 extends React.Component {
   constructor(props) {
     super(props);
-    this.toggle = this.toggle.bind(this);
     this.state = {
       score: 0,
       players: [],
@@ -35,15 +31,10 @@ class SouthFourQuiz extends React.Component {
       maxFu: 50,
       showDifferences: true,
       loadErrorMessage: "",
-      collapsed: true,
     };
 
     this.onSubmit = this.onSubmit.bind(this);
     this.onFuChanged = this.onFuChanged.bind(this);
-  }
-
-  toggle() {
-    this.setState({ collapsed: !this.state.collapsed });
   }
 
   componentDidMount() {
@@ -282,18 +273,6 @@ class SouthFourQuiz extends React.Component {
 
     return (
       <Container>
-        <Button color="primary" onClick={this.toggle}>
-          {t("settings.buttonLabel")}
-        </Button>
-        <Collapse isOpen={!this.state.collapsed}>
-          <Card>
-            <CardBody>
-              <Row>
-                <div>aaaa</div>
-              </Row>
-            </CardBody>
-          </Card>
-        </Collapse>
         <ListGroup>
           <ListGroupItemHeading>
             <span>{t("allLast.title")}</span>
@@ -632,4 +611,4 @@ function findMinimumRonValue(
   return RON_SCORES[0];
 }
 
-export default withTranslation()(SouthFourQuiz);
+export default withTranslation()(SouthFourQuiz2);
