@@ -111,6 +111,13 @@ class SouthFourQuiz extends React.Component {
     });
   }
 
+  //   generateNewQuizForSanma() {
+  // let players = [new Player(), new Player(), new Player()];
+  // let pointsRemaining = 105000; // 35000 * 3
+  // let points = randomInt(500, 300) * 100;
+  // players[0].points = points;
+  // pointsRemaining -= points;
+
   generateNewQuiz() {
     let players = [new Player(), new Player(), new Player(), new Player()];
 
@@ -118,6 +125,9 @@ class SouthFourQuiz extends React.Component {
     do {
       let pointsRemaining = 100000;
 
+      console.log(randomInt(500, 300) * 100);
+      console.log(randomInt(500, 300) * 100);
+      console.log(randomInt(500, 300) * 100);
       let points = randomInt(500, 300) * 100;
       players[0].points = points;
       pointsRemaining -= points;
